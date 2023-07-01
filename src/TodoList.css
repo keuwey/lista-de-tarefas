@@ -63,12 +63,18 @@ button.add:hover {
   margin: auto;
 }
 
+.listaLogo {
+  max-width: 600px;
+  max-height: 340px;
+}
+
 .item {
   display: flex;
   justify-content: space-between;
   border: 1px solid #363b65;
   margin-bottom: 10px;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .item:hover {
@@ -76,6 +82,7 @@ button.add:hover {
 }
 
 .item span {
+  text-align: start;
   width: 100%;
   color: white;
   margin-right: 10px;
@@ -94,6 +101,7 @@ button.add:hover {
 }
 
 .item.completo span {
+  text-align: start;
   width: 100%;
   color: #4d506e;
   margin-right: 10px;
@@ -102,16 +110,18 @@ button.add:hover {
 
 button.del {
   color: white;
-  background: #363b65;
+  background: #ff004c;
   border: none;
   padding: 15px;
   cursor: pointer;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 button.del:hover {
   border: none;
   color: white;
-  background: #363f88;
+  background: #ca0728;
 }
 
 button.deleteAll {
@@ -123,6 +133,7 @@ button.deleteAll {
   font-size: 18px;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 20px;
 }
 
 button.deleteAll:hover {
