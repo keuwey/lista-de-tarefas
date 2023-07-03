@@ -1,6 +1,6 @@
 # Lista de Tarefas
 
-Projeto feito em React para gerenciar tarefas de forma simples. Contém as funções de marcar as tarefas já concluídas, deletar uma tarefa individual ou deletar todas. O projeto também é dark mode por padrão e totalmente responsivo.
+Projeto feito em React para gerenciar tarefas de forma simples. Contém as funções de marcar as tarefas já concluídas, deletar uma tarefa individual ou deletar todas. O projeto também é dark mode por padrão e totalmente responsivo, além de fazer a persistência dos dados no Local Storage.
 
 ## Deploy
 
