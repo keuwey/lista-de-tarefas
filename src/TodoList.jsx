@@ -4,14 +4,10 @@ import Icone from "./assets/lista.png"
 
 function TodoList() {
   const listaStorage = localStorage.getItem("Lista")
-  const [lista, setLista] = useState(
-    listaStorage ? JSON.parse(listaStorage) : []
-  )
+  const [lista, setLista] = useState(listaStorage ? JSON.parse(listaStorage) : [])
   const [novoItem, setNovoItem] = useState("")
 
-  useEffect(() => {
-    localStorage.setItem("Lista", JSON.stringify(lista))
-  }, [lista])
+  useEffect(() => localStorage.setItem("Lista", JSON.stringify(lista)), [lista])
 
   function adicionaItem(form) {
     form.preventDefault()
@@ -45,9 +41,7 @@ function TodoList() {
           id="input-entrada"
           type="text"
           value={novoItem}
-          onChange={(e) => {
-            setNovoItem(e.target.value)
-          }}
+          onChange={e => setNovoItem(e.target.value)}
           placeholder="Adicione uma tarefa"
         />
         <button className="add" type="submit">
@@ -60,20 +54,9 @@ function TodoList() {
             <img src={Icone} className="listaLogo" />
           ) : (
             lista.map((item, index) => (
-              <div
-                key={index}
-                className={item.isComplited ? "item completo" : "item"}>
-                <span
-                  onClick={() => {
-                    clicou(index)
-                  }}>
-                  {item.text}
-                </span>
-                <button
-                  onClick={() => {
-                    deleta(index)
-                  }}
-                  className="del">
+              <div key={index} className={item.isComplited ? "item completo" : "item"}>
+                <span onClick={() => clicou(index)}> {item.text} </span>
+                <button onClick={() => deleta(index)} className="del">
                   Deletar
                 </button>
               </div>
@@ -81,11 +64,7 @@ function TodoList() {
           )}
         </div>
         {lista.length > 0 && (
-          <button
-            onClick={() => {
-              deletaTudo()
-            }}
-            className="deleteAll">
+          <button onClick={() => deletaTudo()} className="deleteAll">
             Deletar Todas
           </button>
         )}
